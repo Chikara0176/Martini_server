@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # namespace :apis, { format: 'json' } do
+    get '/', to: "apis#root"
+    get '/user', to: "apis#new"
+    post '/user', to: "apis#new"
+  #  end
 end
