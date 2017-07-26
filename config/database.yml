@@ -4,25 +4,27 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-production:
+default: &default
   adapter: mysql2
-  database: asagao_production
-  username: asagao
-  password: diiNv2bid4aTI
-  host: 127.0.0.1
+  timeout: 5000
   encoding: utf8
+  reconnect: false
+  database: Martini
+#  database: martini
+  pool: 5
+  username: root
+  password: 1Da7frphZ
+#  password: 0qb2GdoSx
+  host: 163.44.152.70
 
 development:
   <<: *default
-  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
 
 production:
   <<: *default
-  database: db/production.sqlite3
